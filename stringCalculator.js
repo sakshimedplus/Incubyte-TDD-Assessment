@@ -9,7 +9,7 @@ function add(numbers) {
         const char = numbers[i];
         if (char >= '0' && char <= '9') {
             currentNumber += char;
-        } else if (char === ',') {     
+        } else if (char === ',' || char === '\n') {     
              if (currentNumber) {
                 total += Number(currentNumber);
                 currentNumber = "";

@@ -12,5 +12,5 @@ test('returns sum for n numbers',()=>{
     expect(add("5,3,4,1")).toBe(13);
 });
 test('returns sum for n numbers',()=>{
-    expect(add("1\n2,3")).toBe(13);
+    expect(add("1\n2,10")).toBe(13);
 });
