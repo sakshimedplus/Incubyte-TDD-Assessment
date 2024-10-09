@@ -17,3 +17,8 @@ test('returns sum for n numbers',()=>{
 test('returns sum for n numbers with different delimiter',()=>{
     expect(add("//;\n1;2")).toBe(3);
 });
+test('should throw an exception for negative numbers', () => {
+    expect(() => {
+        add("1,-2,3,-4");
+    }).toThrow("negatives not allowed: -2, -4");
+});
