@@ -14,3 +14,6 @@ test('returns sum for n numbers',()=>{
 test('returns sum for n numbers',()=>{
     expect(add("1\n2,10")).toBe(13);
 });
+test('returns sum for n numbers with different delimiter',()=>{
+    expect(add("//;\n1;2")).toBe(3);
+});
