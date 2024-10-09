@@ -5,6 +5,9 @@ test('returns 0 for empty string',()=>{
 test('returns number for single number',()=>{
     expect(add("5")).toBe(5);
 });
-test('returns sum for 2 number',()=>{
+test('returns sum for 2 numbers',()=>{
     expect(add("5,3")).toBe(8);
+});
+test('returns sum for 3 numbers',()=>{
+    expect(add("5,3,4")).toBe(8);
 });
