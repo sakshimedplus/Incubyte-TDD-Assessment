@@ -8,6 +8,6 @@ test('returns number for single number',()=>{
 test('returns sum for 2 numbers',()=>{
     expect(add("5,3")).toBe(8);
 });
-test('returns sum for 3 numbers',()=>{
-    expect(add("5,3,4")).toBe(8);
+test('returns sum for n numbers',()=>{
+    expect(add("5,3,4,1")).toBe(13);
 });
