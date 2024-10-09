@@ -5,6 +5,7 @@ function add(numbers) {
     let total = 0;   
     let currentNumber = "";
     let delimiter = [',', '\n'];  // Default delimiters
+     let negatives = [];           // To store negative numbers
     if (numbers.startsWith("//")) {
          // Check if there's a custom delimiter declaration
         const firstNewlineIndex = numbers.indexOf("\n");
@@ -19,14 +20,28 @@ function add(numbers) {
         if (char >= '0' && char <= '9') {
             currentNumber += char;
         } else if (delimiter.includes(char)) {     
-             if (currentNumber) {
-                total += Number(currentNumber);
-                currentNumber = "";
+            if (currentNumber) {
+                const num = Number(currentNumber);
+                if (num < 0) {
+                    negatives.push(num); // Store negative numbers
+                } else {
+                    total += num;
+                }
+                currentNumber = ""; // Reset the number
             }
-        } 
+        } else {
+            currentNumber += char;
+        }
     }
     if (currentNumber) {
-        total += Number(currentNumber);
+        const num = Number(currentNumber);
+        if (num < 0)
+            negatives.push(num);
+        else
+        total +=num;
+    }
+    if (negatives.length > 0) {
+        throw new Error(`negatives not allowed: ${negatives.join(", ")}`);
     }
     return total; 
 }
